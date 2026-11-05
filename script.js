@@ -176,6 +176,9 @@ const LAGU = [    // taruh file lagu di folder music/
   { t: 'Kota Ini Tak Sama Tanpa Mu', a: 'Nadhif', src:'music/kota-ini -tak-sama-tanpamu.mp3'},
   { t: 'Dua Sejoli', a: 'Dewa1 19', src:'music/Dua-Sejoli.mp3'},
   { t: 'Sefaruh Nafas', a: 'Dewa 19', src:'music/Separuh-Nafas.mp3'}
+
+  MEMORI.forEach(m => m.src = m.src.replace('foto/', ''));
+LAGU.forEach(l => l.src = l.src.replace('music/', ''));
 ];
 /* ============================================ */
 
