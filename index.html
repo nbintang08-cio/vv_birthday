@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Selamat Ulang Tahun, VIVI FITRIAH 🌸</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Great+Vibes&family=Inter:wght@400;500;600&family=Kalam:wght@400;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="locked">
+
+  <!-- 1. Loading -->
+  <section class="stage" id="loader">
+    <div class="flower"><i></i><i></i><i></i><i></i><b></b></div>
+    <p class="loader-text">Menyiapkan sesuatu yang spesial buat kamu...</p>
+  </section>
+
+  <!-- 2. Kode rahasia -->
+  <section class="stage hidden" id="lock">
+    <div class="flower" style="transform:scale(.55);animation:none"><i></i><i></i><i></i><i></i><b></b></div>
+    <div class="lock-card">
+      <h2 id="lockTitle">Untuk VIVI FITRIAH </h2>
+      <p>Masukkan tanggal lahir kamu 🌸</p>
+      <div class="dots" id="dots"></div>
+      <div class="pad" id="pad"></div>
+      <div class="err" id="err" role="alert"></div>
+    </div>
+  </section>
+
+  <!-- 3. Hadiah -->
+  <section class="stage hidden" id="giftStage">
+    <p class="gift-text">Ketuk kotak hadiah untuk membukanya 🎁</p>
+    <button class="gift" id="gift" aria-label="Buka hadiah">
+      <span class="box"></span><span class="lid"></span><span class="rib"></span><span class="bow"></span>
+    </button>
+  </section>
+
+  <canvas id="fx"></canvas>
+  <div class="petals" id="petals" aria-hidden="true"></div>
+
+  <!-- 4. Halaman utama -->
+  <main id="main" class="hidden">
+    <section class="hero">
+      <p class="eyebrow">🌸 Your Special Day 🌸</p>
+      <h1>Happy <em>Birthday</em> <span id="nm">VIVI FITRIAH</span></h1>
+      <p class="date">NOVEMBER 6 · The Most Special Day</p>
+      <p class="tip" id="tip">Tap lilin untuk meniupnya! 🎂</p>
+      <div class="cake" id="cake">
+        <div class="candles" id="candles">
+          <button class="candle" aria-label="Lilin 1"></button>
+          <button class="candle" aria-label="Lilin 2"></button>
+          <button class="candle" aria-label="Lilin 3"></button>
+        </div>
+        <div class="c3"></div>
+        <div class="c2"></div>
+        <div class="c1"></div>
+        <div class="plate"></div>
+      </div>
+      <p class="wish" id="wish"></p>
+    </section>
+
+    <section class="note-wrap">
+      <div class="pre">
+        <b>Happy Birthday! vivi 🌸</b>
+      </div>
+      <article class="letter pending" id="letter">
+        <p class="when">6 NOVEMBER</p>
+        <h3>Selamat ulang tahun yang ke-19, Vivi Fitriah! 🎂🎉</h3>
+        <p>"Sembilan belas tahun, dan kamu sudah tumbuh jadi pribadi yang makin kuat dan dewasa. Semoga di usia yang baru ini kamu selalu diberi kesehatan,
+           rezeki yang lancar, dan kemudahan dalam mengejar semua cita-citamu."</p>
+        <p>"Semoga mimpi-mimpimu satu per satu terwujud, dan kalaupun ada jalan yang berliku, semoga kamu selalu punya semangat untuk bangkit lagi.
+           Teruslah mencoba hal baru dan berani keluar dari zona nyaman."</p>
+        <p>"Semoga kamu juga selalu dikelilingi orang-orang yang tulus, dan tetap jadi diri sendiri yang positif dan menyenangkan. Nikmati hari spesialmu, ya!"</p>
+        <p class="sign">Happy birthday, Vivi! 🎈✨</p>
+      </article>
+    </section>
+
+    <section class="sec">
+      <p class="eb rv">— My First Gift —</p>
+      <h2 class="rv">Digital Bouquet</h2>
+      <p class="sb rv">Setiap bunga menyimpan pesan kecil untukmu</p>
+      <div class="bq rv" id="bq"><svg id="stems" viewBox="0 0 320 340" aria-hidden="true"></svg>
+        <div class="pot"></div>
+      </div>
+      <p class="bqmsg" id="bqmsg">Ketuk salah satu bunga 🌸</p>
+    </section>
+
+    <section class="sec">
+      <p class="eb rv"></p>
+      <h2 class="rv">- You Photo -</h2>
+      <p class="sb rv"></p>
+      <div class="grid" id="grid"></div>
+    </section>
+
+    <section class="sec">
+      <p class="eb rv">—Music—</p>
+      <h2 class="rv">Playlist</h2>
+      <p class="sb rv">Pilih lagu yang pengen kamu dengarkan di bawah</p>
+      <div class="pl rv">
+        <p class="np">NOW PLAYING</p>
+        <div class="vinyl" id="vinyl"><i></i></div>
+        <p class="tt" id="tt">–</p>
+        <p class="ta" id="ta">–</p>
+        <div class="bar">
+          <span id="cur">0:00</span>
+          <input type="range" id="seek" min="0" max="100" value="0" step="1" aria-label="Posisi lagu">
+          <span id="dur">0:00</span>
+        </div>
+        <div class="ctl">
+          <button id="prev" aria-label="Sebelumnya">⏮</button>
+          <button id="pp" class="pp" aria-label="Putar">▶</button>
+          <button id="next" aria-label="Berikutnya">⏭</button>
+        </div>
+        <p class="pnote" id="pnote"></p>
+        <div class="list" id="list"></div>
+      </div>
+    </section>
+  </main>
+
+  <button id="musik" class="hidden" aria-label="Putar musik">♫</button>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
